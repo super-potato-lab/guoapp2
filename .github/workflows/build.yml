@@ -185,14 +185,10 @@ jobs:
         with:
           pattern: duanjushijie-*
           path: release
-      - uses: actions/download-artifact@v4
-        with:
-          pattern: quanjushijie-*
-          path: release
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.version.outputs.version }}
-          name: 短剧视界 / 全剧视界 ${{ steps.version.outputs.version }}
+          name: 短剧视界 ${{ steps.version.outputs.version }}
           files: |
             release/**/*.apk
             release/**/*-windows-x64-portable.zip
